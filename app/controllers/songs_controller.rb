@@ -48,6 +48,7 @@ class SongsController < ApplicationController
     end
     if !params["Artist Name"].empty?
       @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
+    end
     if !params[:genres].empty?
       @song.genre_ids = params[:genres]
     end
