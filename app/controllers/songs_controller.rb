@@ -35,4 +35,8 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
+  patch '/songs/:slug/edit' do
+
+  end
+
 end
