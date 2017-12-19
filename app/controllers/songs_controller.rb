@@ -36,7 +36,7 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:slug/edit' do
-
+    @song = Song.find_by_slug(params[:slug])
     flash[:message] = "Successfully updated song."
   end
 
