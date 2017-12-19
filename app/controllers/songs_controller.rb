@@ -44,9 +44,13 @@ class SongsController < ApplicationController
   patch '/songs/:slug' do
     binding.pry
     @song = Song.find_by_slug(params[:slug])
-    @song.name = params["Name"]
-    @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
-    @song.genre_ids = params[:genres]
+    if !params["Name"].empty?
+      @song.name = params["Name"]
+    if !params["Artist Name"].empty?
+      @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
+    if !params[:genres].empty?
+      @song.genre_ids = params[:genres]
+    end
     @song.save
     flash[:message] = "Successfully updated song."
 
