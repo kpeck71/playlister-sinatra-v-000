@@ -37,7 +37,7 @@ class SongsController < ApplicationController
 
   patch '/songs/:slug/edit' do
 
-
+    flash[:message] = "Successfully updated song."
   end
 
 end
