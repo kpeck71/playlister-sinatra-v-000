@@ -40,6 +40,7 @@ class SongsController < ApplicationController
     @song.name = params[:name]
     @song.artist = params[:artist_name]
     @song.genres_id = params[:genres]
+    @song.save
     flash[:message] = "Successfully updated song."
   end
 
