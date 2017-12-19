@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h2><%=@song.name %></h2>
 <h3><%= @song.artist.name %></h3>
 <% if !@song.genres.empty? %>
