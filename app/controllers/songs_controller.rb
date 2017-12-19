@@ -44,7 +44,7 @@ class SongsController < ApplicationController
   patch '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
     @song.name = params["Name"]
-    @song.artist = params["Artist Name"]
+    @song.artis.namet = params["Artist Name"]
     @song.genres_id = params[:genres]
     @song.save
     flash[:message] = "Successfully updated song."
